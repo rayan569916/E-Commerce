@@ -1,0 +1,81 @@
+<app-image></app-image>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label class="form-label" for="productIdInput">Product Id</label>
+      <input id="productIdInput" class="form-control" [(ngModel)]="productPayLoad.productId">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="form-label" for="productNameInput">Product Name</label>
+      <input id="productNameInput" class="form-control" [(ngModel)]="productPayLoad.productName">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="form-label" for="productPriceInput">Product Price</label>
+      <input id="productPriceInput" class="form-control" [(ngModel)]="productPayLoad.productPrice">
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-outline-primary" (click)="addNewProduct()">Add</button>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <h2>Product List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of this.allProductResponse">
+        <td>{{ product.productId }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.productPrice }}</td>
+        <td>
+          <button class="btn btn-outline-secondary me-1" (click)="assignEditPayLoad(product)" data-bs-toggle="modal" data-bs-target="#editModal">edit</button>
+          <button class="btn btn-outline-danger" (click)="deleteProduct(product.productId)">delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="productIdInput">Product Id</label>
+                <input id="productIdInput" class="form-control" [(ngModel)]="editProductPayLoad.productId">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="productNameInput">Product Name</label>
+                <input id="productNameInput" class="form-control" [(ngModel)]="editProductPayLoad.productName">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="productPriceInput">Product Price</label>
+                <input id="productPriceInput" class="form-control" [(ngModel)]="editProductPayLoad.productPrice">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-secondary" (click)="editProduct(editProductPayLoad)" data-bs-dismiss="modal">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

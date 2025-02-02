@@ -1,0 +1,28 @@
+{
+"/add-product": {
+    "target": "http://localhost:8080/add-product",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {"^/add-product" : ""}
+  },
+  "/allProducts": {
+    "target": "http://localhost:8080/allProducts",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {"^/allProducts" : ""}
+  },
+  "/delete-product": {
+    "target": "http://localhost:8080/delete-product/",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {"^/delete-product" : ""}
+  },
+  "/update-product": {
+    "target": "http://localhost:8080/update-product",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {"^/update-product" : ""}
+  }
+  
+  }
+  

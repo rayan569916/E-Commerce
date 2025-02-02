@@ -1,0 +1,55 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <div class="row col-12 align-items-center">
+            <div class="col-md-8 d-flex align-items-center">
+                <div class="input-group d-flex justify-content-end">
+                    <div class="form-floating">
+                        <input type="search" 
+                               class="form-control" 
+                               id="searchImage" 
+                               [(ngModel)]="img_id" >
+                        <label for="searchImage" class="text-muted">Search image using image id</label>
+                    </div>                    
+                    <button class="btn btn-outline-primary" (click)="getImageById()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-outline-primary" (click)="getImages()">All images</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+        <img [src]="'data:image/jpeg;base64,' + image.data" alt="{{ image.img_name }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ image.img_name }}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</div>
+
+<div class="container mt-3 mb-3">
+    <input type="file" (change)="onFileChange($event)">
+</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let image of images">
+                <div class="card" style="width: 100%;">
+                    <img [src]="'data:image/jpeg;base64,' + image.data" alt="{{ image.img_name }}" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ image.img_name }}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

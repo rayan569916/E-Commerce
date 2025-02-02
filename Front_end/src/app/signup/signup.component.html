@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        Signup
+    </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userName" id="userName" placeholder="Username" [(ngModel)]="signupPayLoad.username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="New Password" [(ngModel)]="this.passwordCheck">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="Confirm Password" [(ngModel)]="signupPayLoad.password">
+        </div>
+        <button class="btn mt-3" (click)="signupFunction()">Signup</button>
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="/login">Already have an account</a>
+    </div>
+
+
+</div>
+

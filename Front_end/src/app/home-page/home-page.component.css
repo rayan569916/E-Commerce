@@ -1,0 +1,123 @@
+body {
+    /* background-color: #f7f30a; */
+    padding-left: 50px;
+}
+
+.side_nav_style{
+    background-color: #f7f30a;
+    position: fixed;
+    top: 0px; 
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 5px 1px 0;
+    align-content: flex-start;
+    width: 50px;
+}
+.btn_nav{
+    background-color: #f7f30a; 
+    border: none;
+}
+
+.nav_style{
+    padding: 5px 0 5px 50px;
+    background-color: #212121;
+}
+
+.nav_img{
+    height: 25px;
+    width: 25px;
+}
+
+.nav_img_search{
+    height: 25px;
+    width: 25px;   
+}
+
+.nav_btn_search{
+    padding-top: 0;
+    border-radius: 100%;
+}
+
+
+.main_div{
+    border-color: yellow;
+}
+
+.scroll-container {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    scrollbar-width: none;
+    border-radius: 1%;
+}
+  
+.scroll-item {
+    min-width: 100%;
+    height: 100%;
+    background-color: #463636;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 5%;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari, Edge */
+}
+
+
+.button-33 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #c2fbd7;
+    border-radius: 50%;
+    box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+                rgba(44, 187, 99, 0.15) 0 1px 2px,
+                rgba(44, 187, 99, 0.15) 0 2px 4px,
+                rgba(44, 187, 99, 0.15) 0 4px 8px,
+                rgba(44, 187, 99, 0.15) 0 8px 16px,
+                rgba(44, 187, 99, 0.15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 4%;  
+    height: 4%; 
+}
+
+/* Left button */
+.button-33.left {
+    left: 1%;
+}
+
+/* Right button */
+.button-33.right {
+    right: 1%;
+}
+
+/* Hover effect */
+.button-33:hover,
+ .nav_btn:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+                rgba(44, 187, 99, 0.25) 0 1px 2px,
+                rgba(44, 187, 99, 0.25) 0 2px 4px,
+                rgba(44, 187, 99, 0.25) 0 4px 8px,
+                rgba(44, 187, 99, 0.25) 0 8px 16px,
+                rgba(44, 187, 99, 0.25) 0 16px 32px;
+}
+
+
+  

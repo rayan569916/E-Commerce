@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-light nav_style border-bottom border-1 border-dark">
+    <div class="container-fluid">
+        <img class="nav_img" src="favicon.ico">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search"
+                style="height: 10%; background-color: #4b4b45;" aria-label="Search" [(ngModel)]="Img_id" name="id">
+            <a class="p-0 border-0 p-1 nav_btn" (click)="getImageById()">
+                <img class="nav_img" src="search.png">
+            </a>
+        </form>
+        <div>
+            <a class=" m-1" type="submit">
+                <img class="nav_img nav_btn" src="power (1).png">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar side_nav_style border-end border-1 border-dark">
+    <div class="container-fluid d-flex flex-column" style="padding-left: 7px;">
+        <button class="p-0 border-0 mb-3 mt-2" style="background-color: #dad608;">
+            <img class="nav_img nav_btn" src="dashboard.png">
+        </button>
+        <button class="border-0 mb-3 p-1 nav_btn" style="background-color: #dad608; border-radius: 20%;">
+            <img class="nav_img" src="shopping-cart.png">
+        </button>
+        <button class="border-0 p-1 nav_btn" style="background-color: #dad608; border-radius: 20%;">
+            <img class="nav_img" src="order.png">
+        </button>
+        <!-- <div class="collapse navbar-collapse pt-2" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home-page/shopping">Shopping</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home-page/product">Product</a>
+        </li>
+      </ul>
+    </div> -->
+    </div>
+</nav>
+
+<!-- <div class="d-flex justify-content-center pt-2">
+  <div class="card" style="width: 18rem;">
+      <img [src]="'data:image/jpeg;base64,' + image.data" alt="{{ image.img_name }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ image.img_name }}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <img [src]="'data:image/jpeg;base64,' + image.data" alt="{{ image.img_name }}" class="mt-5" style="height: 50%; width: auto; border-radius: 2%;"/>
+</div> -->
+
+<div class="d-flex justify-content-evenly gap-2" style="background-color: #121212;">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-evenly">
+            <div class="col-md-5 d-flex justify-content-center"
+                style="background-color: #212121; border-radius: 2%; margin: 5% 0% 5% 0%; max-height: 755px;">
+                <div appAutoScroll class="scroll-container">
+                    <div class="scroll-item" *ngFor="let img of images" style="flex: 1 1 18rem;">
+                        <div class="card" style=" background-color: #333; color: white;">
+                            <div class="card-img-top" style=" width: 100%;
+              height: 400px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;">
+                                <button class="button-33 left" (click)="moveLeft()" role="button">
+                                    <img src="back.png" style="height: 20px; width: auto;">
+                                </button>
+                                <img [src]="'data:image/jpeg;base64,' + img.data" alt="{{ img.img_name }}"
+                                    *ngIf="img.data" style="width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;">
+                                <button class="button-33 right" (click)="moveRight()" role="button">
+                                    <img src="right-arrow.png" style="height: 20px; width: auto;">
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title">{{ img.img_name || 'Card Title' }}</h5>
+                                </div>
+                                <p class="card-text">Data for {{img.img_name}} is currently unavailable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5"
+                style="background-color: #212121; border-radius: 2%; margin: 5% 0% 5% 0%; max-height: 755px;">
+                <div class="row d-flex justify-content-evenly">
+                    <input type="file" [(ngModel)]="this.upLoadFile"/>
+                    <button (click)="UploadFile()">b1</button>
+
+                </div>
+                <div class="row d-flex justify-content-evenly">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
